@@ -8,7 +8,7 @@ export default function UserSwitcher({ compact = false }: { compact?: boolean })
 
   return (
     <div
-      className={`flex rounded-2xl bg-honey-50 p-1 ${compact ? 'text-xs' : 'text-sm'}`}
+      className={`flex shrink-0 rounded-2xl bg-honey-50 p-1 ${compact ? 'text-[11px] sm:text-xs' : 'text-sm'}`}
       role="group"
       aria-label="Switch active user"
     >
@@ -17,7 +17,7 @@ export default function UserSwitcher({ compact = false }: { compact?: boolean })
           key={id}
           type="button"
           onClick={() => setActiveUser(id)}
-          className={`flex-1 rounded-xl px-3 py-1.5 font-medium transition ${
+          className={`flex-1 rounded-xl px-2 py-1.5 font-medium transition sm:px-3 ${
             activeUser === id
               ? 'bg-black/30 text-white shadow-soft'
               : 'text-white/60 hover:text-white/80'

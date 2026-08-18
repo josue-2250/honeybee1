@@ -127,6 +127,15 @@
 .romantic-page .bg-black\/30 { background-color: rgba(111, 48, 87, 0.42); }
 .romantic-page .bg-black\/20 { background-color: rgba(126, 57, 99, 0.30); }
 
+.chat-page {
+  height: calc(100dvh - 4.75rem - env(safe-area-inset-bottom));
+  min-height: 26rem;
+}
+
+@media (max-width: 359px) {
+  .chat-gif-button { display: none; }
+}
+
 @keyframes page-enter {
   from {
     opacity: 0;

@@ -35,7 +35,7 @@ function NavItem({
         [
           'group flex items-center gap-3 rounded-2xl transition-all duration-200',
           mobile
-            ? 'flex-col gap-1 px-3 py-2 text-xs'
+            ? 'min-w-0 flex-1 flex-col gap-1 px-1 py-2 text-[10px] leading-none sm:px-2 sm:text-xs'
             : 'px-4 py-3 text-sm font-medium',
           isActive
             ? 'bg-honey-100 text-white shadow-soft'
@@ -54,7 +54,7 @@ function NavItem({
                 : 'text-white/60 group-hover:text-honey-400'
             }
           />
-          <span className={mobile ? 'truncate' : ''}>
+          <span className={mobile ? 'w-full truncate text-center' : ''}>
             {mobile ? shortLabel : label}
           </span>
         </>
@@ -97,13 +97,13 @@ export default function Layout() {
 
       {/* Main content */}
       <main className="flex min-h-svh flex-1 flex-col md:pl-64">
-        <div className="flex-1 pb-20 md:pb-0">
+        <div className="flex-1 pb-[calc(4.75rem+env(safe-area-inset-bottom))] md:pb-0">
           <Outlet />
         </div>
       </main>
 
       {/* Mobile bottom navigation */}
-      <nav className="fixed inset-x-0 bottom-0 z-30 flex items-stretch justify-around border-t border-rose-100/20 bg-[#5c284a]/95 px-2 py-1 shadow-soft-lg backdrop-blur-xl md:hidden">
+      <nav className="fixed inset-x-0 bottom-0 z-30 flex min-h-[4.75rem] items-stretch justify-around border-t border-rose-100/20 bg-[#5c284a]/95 px-1 pt-1 pb-[calc(0.25rem+env(safe-area-inset-bottom))] shadow-soft-lg backdrop-blur-xl md:hidden">
         {navItems.map((item) => (
           <NavItem key={item.to} {...item} mobile />
         ))}
